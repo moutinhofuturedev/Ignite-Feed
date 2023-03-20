@@ -1,6 +1,7 @@
 import styles from "./index.module.css"
 import data from "../../../data.json"
 import { PencilLine } from "phosphor-react"
+import { Avatar } from "../Avatar";
 
 export function Sidebar() {
   return (
@@ -8,7 +9,7 @@ export function Sidebar() {
       <img className={styles.cover} src={data.cover} />
 
       <div className={styles.profile}>
-        <img src={data.avatar} />
+        <Avatar src={data.avatar}/>
 
         <strong>{data.name}</strong>
         <span>{data.jobTitle}</span>
