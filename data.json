@@ -2,5 +2,53 @@
     "name": "Paulo Moutinho",
     "jobTitle": "Software Engineer",
     "avatar": "https://avatars.githubusercontent.com/u/86997545?v=4",
-    "cover" : "https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
+    "cover" : "https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50",
+    "posts": [
+        {
+            "id": 1,
+            "author": {
+                "avatarUrl": "https://github.com/moutinhofuturedev.png",
+                "name": "Paulo Moutinho",
+                "role": "Software Engineer"
+            },
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": "Fala galeraa 👋"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"
+                },
+                {
+                    "type": "paragraph",
+                    "link": "jane.design/doctorcare"
+                }
+            ],
+            "publishedAt": "2022-05-03 20:00:00"
+        },
+        {
+            "id": 2,
+            "author": {
+                "avatarUrl": "https://github.com/diego3g.png",
+                "name": "Diego Fernandes",
+                "role": "CTO e Founder @Rocketseat"
+            },
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": "Fala galeraa 👋"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"
+                },
+                {
+                    "type": "paragraph",
+                    "link": "jane.design/doctorcare"
+                }
+            ],
+            "publishedAt": "2022-05-15 22:15:45"
+        }
+    ]
 }
