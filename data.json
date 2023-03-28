@@ -21,8 +21,8 @@
                     "content": "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"
                 },
                 {
-                    "type": "paragraph",
-                    "link": "jane.design/doctorcare"
+                    "type": "link",
+                    "content": "jane.design/doctorcare"
                 }
             ],
             "publishedAt": "27 de março às 22:10"
@@ -37,15 +37,15 @@
             "content": [
                 {
                     "type": "paragraph",
-                    "content": "Fala galeraa 👋"
+                    "content": "Como vai pessoal 👋"
                 },
                 {
                     "type": "paragraph",
-                    "content": "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀"
+                    "content": "Fiz deploy do último projeto e subiu muito bem. Já podemos ver a aplicação em produção 🚀"
                 },
                 {
-                    "type": "paragraph",
-                    "link": "jane.design/doctorcare"
+                    "type": "link",
+                    "content": "jane.design/doctorcare"
                 }
             ],
             "publishedAt": "1 de fevereiro às 13:14"
