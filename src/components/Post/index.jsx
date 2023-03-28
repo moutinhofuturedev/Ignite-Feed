@@ -21,14 +21,16 @@ export function Post({ author, publishedAt, content }) {
         </header>
         <div className={styles.content}>
           {content.map((line, index) => {
-            if (line.type === "paragraph") {
-              return <p key={index}>{line.content}</p>;             
-            } else if (line.type === "link") {
-              return <p key={index}><a href="">{line.content}</a></p>;
-            }
+            return line.type === "paragraph" ? (
+              <p key={index}>{line.content}</p>
+            ) : (
+              <p key={index}>
+                <a href="#">{line.content}</a>
+              </p>
+            );
           })}
         </div>
-        
+
         <form className={styles.commentForm}>
           <strong>Deixe seu comentário</strong>
           <textarea placeholder="Deixe um comentário"></textarea>
