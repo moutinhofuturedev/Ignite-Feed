@@ -2,42 +2,33 @@ import styles from "./index.module.css"
 import { Comment } from "../Comment";
 import { Avatar } from "../Avatar";
 
-export function Post(props) {
+export function Post({ author, publishedAt, content }) {
+  
   return (
     <>
       <article className={styles.post}>
         <header>
           <div className={styles.author}>
-            <Avatar src="https://github.com/diego3g.png"/>
+            <Avatar src={author.avatarUrl} />
             <div className={styles.authorInfo}>
-              <strong>Diego Fernandes</strong>
-              <span>{data.jobTitle}</span>
+              <strong>{author.name}</strong>
+              <span>{author.role}</span>
             </div>
           </div>
           <time title="13 de Março às 08:52" dateTime="2023-03-13 08:52:30">
-            Publicado há 1H
+            {publishedAt}
           </time>
         </header>
         <div className={styles.content}>
-          <p>
-            <p>Fala galeraa 👋</p>
-
-            <p>
-              Acabei de subir mais um projeto no meu portifa. É um projeto que
-              fiz no NLW Return, evento da Rocketseat. O nome do projeto é
-              DoctorCare 🚀
-            </p>
-
-            <p>
-              👉 <a href="">jane.design/doctorcare</a>
-            </p>
-
-            <p>
-              <a href="">#novoprojeto #nlw #rocketseat </a>
-            </p>
-          </p>
+          {content.map((line, index) => {
+            if (line.type === "paragraph") {
+              return <p>{line.content}</p>;             
+            } else if (line.type === "link") {
+              return <p><a href="">{line.content}</a></p>;
+            }
+          })}
         </div>
-
+        
         <form className={styles.commentForm}>
           <strong>Deixe seu comentário</strong>
           <textarea placeholder="Deixe um comentário"></textarea>
