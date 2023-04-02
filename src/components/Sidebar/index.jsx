@@ -1,7 +1,7 @@
 import styles from "./index.module.css"
-import data from "../../../data.json"
 import { PencilLine } from "phosphor-react"
 import { Avatar } from "../Avatar";
+import data from "../../../data.json"
 
 export function Sidebar() {
   return (
