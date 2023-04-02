@@ -4,12 +4,18 @@ import { Avatar } from "../Avatar";
 import { useState } from "react";
 
 export function Post({ author, publishedAt, content }) {
-  const [ comments, setComments ] = useState([1, 2])
+  const [ comments, setComments ] = useState([])
+  const [ value, setValue ] = useState("")
 
-  function handleCreateNewComment(event) {
+  const handleCreateNewComment = (event) => {
     event.preventDefault()
 
-    setComments([...comments, comments.length + 1])
+    setComments([...comments, value])
+    setValue("")
+  }
+
+  const handleNewCommentChange = (event) => {
+    setValue(event.target.value)
   }
   
   return (
@@ -41,7 +47,7 @@ export function Post({ author, publishedAt, content }) {
 
         <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <strong>Deixe seu comentário</strong>
-          <textarea placeholder="Deixe um comentário"></textarea>
+          <textarea placeholder="Deixe um comentário" value={value} onChange={handleNewCommentChange}></textarea>
           <footer>
             <button type="submit">Publicar</button>
           </footer>
@@ -49,7 +55,7 @@ export function Post({ author, publishedAt, content }) {
 
         <div className={styles.commentList}>
           {comments.map((comment, index) => {
-            return <Comment key={index}/>
+            return <Comment key={index} content={comment}/>
           })}
         </div>
       </article>
