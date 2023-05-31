@@ -2,18 +2,23 @@
 import data from "../../data.json"
 
 describe("<App />", () => {
-  it("Visit my app and check element title", () => {
+  beforeEach("Visit my app and check element title", () => {
     cy.visit("/");
 
     cy.title().should("contain", "Feed");
   });
-  it("in the sidebar, nothing should happen when clicking", () => {
-    cy.visit("/");
 
+  it("deve verificar elementos do sidebar", () => {
     cy.get("strong").contains(data.name);
     cy.get("span").contains(data.jobTitle);
 
     cy.contains("Editar seu perfil").click();
     cy.url().should("include", "/#");
-  })
+  });
+
+  it("deve clicar no campo antes de digitar e mostrar botão de publicar", () => {
+    cy.get("strong").contains("Deixe seu comentário").should("be.visible");
+    cy.get("[data-cy='text']").first().click().type("Muito boa publicação");
+    cy.get("[data-cy='submit']").contains("Publicar").should("be.visible");
+  });
 });
