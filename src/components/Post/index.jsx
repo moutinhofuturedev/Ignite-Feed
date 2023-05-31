@@ -55,9 +55,9 @@ export function Post({ author, publishedAt, content }) {
 
         <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <strong>Deixe seu comentário</strong>
-          <textarea data-cy="text" placeholder="Deixe um comentário" value={value} onChange={handleNewCommentChange}></textarea>
+          <textarea placeholder="Deixe um comentário" value={value} onChange={handleNewCommentChange}></textarea>
           <footer>
-            <button data-cy="submit" type="submit">Publicar</button>
+            <button type="submit">Publicar</button>
           </footer>
         </form>
 

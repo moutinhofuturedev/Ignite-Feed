@@ -21,4 +21,12 @@ describe("<App />", () => {
     cy.get("[data-cy='text']").first().click().type("Muito boa publicação");
     cy.get("[data-cy='submit']").contains("Publicar").should("be.visible");
   });
+
+  it("deve publicar comentário digitado em campo de texto", () => {
+    const comment = "Ei, sua publicação é muito legal...";
+
+    cy.get("[data-cy='text']").first().click().type(comment);
+    cy.get("[data-cy='submit']").contains("Publicar").click();
+    cy.get('p').contains(comment).should("be.visible");
+  });
 });
