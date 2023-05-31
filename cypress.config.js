@@ -5,6 +5,7 @@ export default defineConfig({
   e2e: {
     baseUrl: "https://feed-ruddy.vercel.app/",
     screenshotOnRunFailure: true,
+    screenshotsFolder: true,
     video: true,
     videoUploadOnPasses: true,
   },
