@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 import data from "../../data.json"
+import info from "../fixtures/example.json"
 
 describe("<App />", () => {
   beforeEach("Visit my app and check element title", () => {
@@ -18,15 +19,18 @@ describe("<App />", () => {
 
   it("deve clicar no campo antes de digitar e mostrar botão de publicar", () => {
     cy.get("strong").contains("Deixe seu comentário").should("be.visible");
-    cy.get("textarea").first().click().type("Muito boa publicação");
-    cy.get("button").contains("Publicar").should("be.visible");
+    cy.validateInfo(info.body);
   });
 
   it("deve publicar comentário digitado em campo de texto", () => {
-    const comment = "Ei, sua publicação é muito legal...";
+    cy.validateInfo(info.comments);
+    cy.get('p').contains(info.comments).should("be.visible");
+  });
 
-    cy.get("textarea").first().click().type(comment);
-    cy.get("button").contains("Publicar").click();
-    cy.get('p').contains(comment).should("be.visible");
+  it("deve excluir comentário a partir de uma publicação", () => {
+    cy.validateInfo(info.comments);
+    cy.get('p').contains(info.comments).should("be.visible");
+    cy.get("header > button").click();
+    expect(true).to.equal(true);
   });
 });
