@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cy:cloud": "npx cypress run --record --key a17ca6b2-68f2-4002-be4f-89a710e3026e"
   },
   "dependencies": {
     "phosphor-react": "^1.4.1",
