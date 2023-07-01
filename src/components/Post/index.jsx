@@ -15,7 +15,6 @@ export function Post({ author, publishedAt, content }) {
   }
 
   const handleNewCommentChange = (event) => {
-    event.target.setCustomValidity('')
     setValue(event.target.value)
   }
 
