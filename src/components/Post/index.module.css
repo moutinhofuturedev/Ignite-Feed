@@ -118,6 +118,11 @@ serve para estilizar todo post que vir antes de outro post (apenas se houver out
     cursor: pointer;
 }
 
-.commentForm button[type=submit]:hover {
+.commentForm button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.commentForm button[type=submit]:not(:disabled):hover {
     background: var(--green-300);
 }
