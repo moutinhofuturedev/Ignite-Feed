@@ -1,7 +1,8 @@
-import styles from "./index.module.css"
-import { PencilLine } from "phosphor-react"
-import { Avatar } from "../Avatar";
-import data from "../../../data.json"
+/* eslint-disable jsx-a11y/alt-text */
+import styles from './index.module.css'
+import { PencilLine } from 'phosphor-react'
+import { Avatar } from '../Avatar'
+import data from '../../../data.json'
 
 export function Sidebar() {
   return (
@@ -9,7 +10,7 @@ export function Sidebar() {
       <img className={styles.cover} src={data.cover} />
 
       <div className={styles.profile}>
-        <Avatar src={data.avatar}/>
+        <Avatar src={data.avatar} />
 
         <strong>{data.name}</strong>
         <span>{data.jobTitle}</span>
@@ -17,10 +18,10 @@ export function Sidebar() {
 
       <footer>
         <a href="#">
-          <PencilLine size={20}/>
+          <PencilLine size={20} />
           Editar seu perfil
         </a>
       </footer>
     </aside>
-  );
+  )
 }

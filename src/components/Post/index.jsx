@@ -1,17 +1,17 @@
-import styles from "./index.module.css"
-import { Comment } from "../Comment";
-import { Avatar } from "../Avatar";
-import { useState } from "react";
+import styles from './index.module.css'
+import { Comment } from '../Comment'
+import { Avatar } from '../Avatar'
+import { useState } from 'react'
 
 export function Post({ author, publishedAt, content }) {
-  const [ comments, setComments ] = useState([])
-  const [ value, setValue ] = useState("")
+  const [comments, setComments] = useState([])
+  const [value, setValue] = useState('')
 
   const handleCreateNewComment = (event) => {
     event.preventDefault()
 
     setComments([...comments, value])
-    setValue("")
+    setValue('')
   }
 
   const handleNewCommentChange = (event) => {
@@ -19,13 +19,13 @@ export function Post({ author, publishedAt, content }) {
   }
 
   const deleteComment = (commentToDelete) => {
-    const commentsWithoutDeleteOne = comments.filter(comment => {
+    const commentsWithoutDeleteOne = comments.filter((comment) => {
       return comment !== commentToDelete
     })
 
     setComments(commentsWithoutDeleteOne)
   }
-  
+
   return (
     <>
       <article className={styles.post}>
@@ -43,35 +43,42 @@ export function Post({ author, publishedAt, content }) {
         </header>
         <div className={styles.content}>
           {content.map((line) => {
-            return line.type === "paragraph" ? (
+            return line.type === 'paragraph' ? (
               <p key={line.content}>{line.content}</p>
             ) : (
               <p key={line.content}>
                 <a href="#">{line.content}</a>
               </p>
-            );
+            )
           })}
         </div>
 
         <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <strong>Deixe seu comentário</strong>
-          <textarea 
-            placeholder="Deixe um comentário" 
-            value={value} 
+          <textarea
+            placeholder="Deixe um comentário"
+            value={value}
             onChange={handleNewCommentChange}
-            >
-          </textarea>
+          ></textarea>
           <footer>
-            <button type="submit" disabled={value.length === 0}>Publicar</button>
+            <button type="submit" disabled={value.length === 0}>
+              Publicar
+            </button>
           </footer>
         </form>
 
         <div className={styles.commentList}>
           {comments.map((comment) => {
-            return <Comment key={comment} content={comment} onDeleteComment={deleteComment}/>
+            return (
+              <Comment
+                key={comment}
+                content={comment}
+                onDeleteComment={deleteComment}
+              />
+            )
           })}
         </div>
       </article>
     </>
-  );
+  )
 }
